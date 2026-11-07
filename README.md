@@ -74,7 +74,7 @@ Le sélecteur Español / English / Français est disponible avant et après conn
 
 ## Footer côtier animé
 
-Illustration SVG originale et icônes à effet de volume, stockées dans le code (aucun média externe ni vidéo). Le footer figure sur la connexion et les pages internes, avec liens internes selon la session. Vagues, nuages, oiseaux et reflets sont animés en CSS ; le bouton de pause conserve sa préférence dans le navigateur. `prefers-reduced-motion` désactive les animations. Textes disponibles en espagnol, anglais et français. Validation dans Chromium : bureau/mobile sans débordement horizontal, inscription, navigation du footer, pause persistante et mouvement réduit. Le site 3dicons.co était inaccessible depuis cet environnement ; aucun fichier de ce site n’a été incorporé.
+Illustration SVG originale et icônes à effet de volume, stockées dans le code (aucun média externe ni vidéo). Le footer figure sur la connexion et les pages internes, avec liens internes selon la session. Vagues, nuages, oiseaux et reflets sont animés en CSS ; les animations restent actives sans bouton de pause. `prefers-reduced-motion` désactive les animations. Textes disponibles en espagnol, anglais et français. Validation dans Chromium : bureau/mobile sans débordement horizontal, inscription, navigation du footer, animation continue et mouvement réduit. Le site 3dicons.co était inaccessible depuis cet environnement ; aucun fichier de ce site n’a été incorporé.
 
 ## Profil, récupération et confort d’utilisation
 
@@ -90,4 +90,6 @@ npm run recovery -- votre-adresse@example.com
 
 Cette commande nécessite l’accès local à la base de données et produit un code valable 30 minutes. Le saisir dans « Mot de passe oublié ». Conserver les codes hors du dépôt et ne pas les partager dans le chat. La restauration d’une sauvegarde invalide désormais aussi les codes de récupération.
 
-Les fenêtres se ferment avec un clic sur le fond extérieur ou Échap. Les formulaires de dossiers conservent leur brouillon de session. Texte de base 15 px, menu avec icônes SVG, libellés et exemples de saisie espacés. Le footer animé apparaît désormais uniquement sur le dashboard ; il reste désactivé par la préférence de mouvement réduit ou le bouton de pause. Les flèches diagonales répétitives ont été retirées.
+Les fenêtres se ferment avec un clic sur le fond extérieur ou Échap. Les formulaires de dossiers conservent leur brouillon de session. Texte de base 15 px, menu avec icônes SVG, libellés et exemples de saisie espacés. Le footer animé apparaît désormais uniquement sur le dashboard ; il respecte la préférence de mouvement réduit du système. Les flèches diagonales répétitives ont été retirées.
+
+Le menu conserve sa position verticale sur ordinateur et horizontale sur mobile lors des changements de module, ainsi que le focus clavier. Le footer utilise désormais des vagues plus amples, des nuages et oiseaux plus mobiles, des reflets et des icônes flottantes. Le bouton de pause a été retiré ; les anciennes préférences de pause sont ignorées. Validation Chromium : position et focus conservés sur quatre modules, navigation mobile, animation active et absence de débordement.
