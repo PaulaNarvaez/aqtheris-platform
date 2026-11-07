@@ -1,6 +1,6 @@
 # Aqtheris
 
-Application de suivi aquacole en français. Première implémentation fonctionnelle : interface Vite, API Node.js et base SQLite locale. Ce dépôt n’est pas encore une livraison couvrant l’ensemble de la proposition, ni une installation de production.
+Application de suivi aquacole avec interface en espagnol, anglais et français. Première implémentation fonctionnelle : interface Vite, API Node.js et base SQLite locale. Ce dépôt n’est pas encore une livraison couvrant l’ensemble de la proposition, ni une installation de production.
 
 ## Démarrage
 
@@ -67,3 +67,7 @@ La restauration contrôle l’intégrité SQLite, les références et la présen
 À décider avec l’institution : responsable fonctionnel, formulaires, hébergement, volume, politique de conservation, données de recherche, partage avec le registre D65-7520, OneDrive/SharePoint et éventuel mode hors connexion. Aucune intégration externe, notification ou interprétation clinique automatique n’est activée.
 
 Pour la production : déploiement HTTPS, sauvegardes automatiques hors machine, supervision, antivirus documentaire selon la politique institutionnelle, tests de charge et revue de sécurité. SQLite convient à cette installation de développement ; évaluer PostgreSQL et un stockage d’objets privé selon le volume et l’architecture retenus.
+
+## Langues et accès local
+
+Le sélecteur Español / English / Français est disponible avant et après connexion. L’espagnol est la langue initiale ; le navigateur conserve le choix. Le changement ne déconnecte pas le compte et préserve les champs de connexion. Les libellés et états sont traduits à l’affichage ; les valeurs enregistrées et les textes saisis par les utilisateurs restent inchangés. Le proxy Vite conserve explicitement le Host du navigateur pour le contrôle d’origine de l’API. Les origines étrangères restent refusées.
