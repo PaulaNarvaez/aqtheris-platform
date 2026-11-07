@@ -75,3 +75,19 @@ Le sélecteur Español / English / Français est disponible avant et après conn
 ## Footer côtier animé
 
 Illustration SVG originale et icônes à effet de volume, stockées dans le code (aucun média externe ni vidéo). Le footer figure sur la connexion et les pages internes, avec liens internes selon la session. Vagues, nuages, oiseaux et reflets sont animés en CSS ; le bouton de pause conserve sa préférence dans le navigateur. `prefers-reduced-motion` désactive les animations. Textes disponibles en espagnol, anglais et français. Validation dans Chromium : bureau/mobile sans débordement horizontal, inscription, navigation du footer, pause persistante et mouvement réduit. Le site 3dicons.co était inaccessible depuis cet environnement ; aucun fichier de ce site n’a été incorporé.
+
+## Profil, récupération et confort d’utilisation
+
+Le bouton de profil en bas du menu permet de modifier le nom, le téléphone, la présentation et la photo (PNG/JPEG/WebP, 2 Mo maximum). Modifier l’email ou le mot de passe demande la clé actuelle. Les photos restent authentifiées et les anciens comptes sont migrés sans perdre leurs données. Les rôles ne peuvent pas être modifiés depuis le profil.
+
+« Mot de passe oublié » utilise un code à usage unique généré depuis le profil après confirmation du mot de passe. Le code n’est affiché qu’une fois et peut être téléchargé ; seul son hachage est conservé. Validité : un an. Un nouveau code invalide l’ancien ; la récupération invalide toutes les sessions et tous les codes du compte. Aucun email n’est envoyé : un service de courrier reste à connecter pour un parcours par email.
+
+Si aucun code n’a été conservé, depuis la machine qui héberge les données :
+
+```sh
+npm run recovery -- votre-adresse@example.com
+```
+
+Cette commande nécessite l’accès local à la base de données et produit un code valable 30 minutes. Le saisir dans « Mot de passe oublié ». Conserver les codes hors du dépôt et ne pas les partager dans le chat. La restauration d’une sauvegarde invalide désormais aussi les codes de récupération.
+
+Les fenêtres se ferment avec un clic sur le fond extérieur ou Échap. Les formulaires de dossiers conservent leur brouillon de session. Texte de base 15 px, menu avec icônes SVG, libellés et exemples de saisie espacés. Le footer animé apparaît désormais uniquement sur le dashboard ; il reste désactivé par la préférence de mouvement réduit ou le bouton de pause. Les flèches diagonales répétitives ont été retirées.
