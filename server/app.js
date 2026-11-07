@@ -2,7 +2,8 @@ import http from 'node:http';
 import {DatabaseSync} from 'node:sqlite';
 import {randomBytes,randomUUID,scryptSync,timingSafeEqual,createHash} from 'node:crypto';
 import {mkdirSync,readFileSync,writeFileSync,existsSync,statSync} from 'node:fs';
-import {resolve,extname} from 'node:path';
+import {resolve,extname,relative,isAbsolute} from 'node:path';
+import {pathToFileURL} from 'node:url';
 const fail=(status,message)=>{throw Object.assign(new Error(message),{status})};
 const schemas={
  organizations:{name:'text',address:'text'},
@@ -72,8 +73,8 @@ export function createApp({dataDir=process.env.DATA_DIR||'data',secure=process.e
  const recordId=id||randomUUID(),now=new Date().toISOString();if(entity==='documents'){if(typeof b.file_data!=='string'||!/^[A-Za-z0-9+/]*={0,2}$/.test(b.file_data))fail(400,'Fichier requis');const buffer=Buffer.from(b.file_data,'base64');if(!buffer.length||buffer.length>10*1024*1024)fail(400,'Fichier vide ou supérieur à 10 Mo');writeFileSync(resolve(files,recordId),buffer,{mode:0o600,flag:'wx'})}
  const after={...data,id:recordId,created_at:before?.created_at||now,updated_at:now,archived:b.archived===1?1:before?.archived||0,revision:(before?.revision||0)+1,created_by:before?.created_by||u.id};db.exec('BEGIN');try{if(before){const keys=Object.keys(after).filter(k=>k!=='id');db.prepare(`UPDATE ${entity} SET ${keys.map(k=>`"${k}"=?`).join(',')} WHERE id=?`).run(...keys.map(k=>after[k]),recordId)}else{const keys=Object.keys(after);db.prepare(`INSERT INTO ${entity}(${keys.map(k=>`"${k}"`).join(',')}) VALUES(${keys.map(()=>'?').join(',')})`).run(...keys.map(k=>after[k]))}audit(entity,recordId,u.id,before,after);db.exec('COMMIT')}catch(e){db.exec('ROLLBACK');throw e}return send(res,before?200:201,after)
  }
- if(!['GET','HEAD'].includes(method))fail(405,'Méthode non autorisée');const root=resolve('dist');let asset=resolve(root,'.'+decodeURIComponent(path));if(!asset.startsWith(root+'/'))fail(403,'Accès refusé');if(!existsSync(asset)||!statSync(asset).isFile())asset=resolve(root,'index.html');if(!existsSync(asset))fail(404,'Exécutez npm run build');res.writeHead(200,{'Content-Type':({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'})[extname(asset)]||'application/octet-stream','Content-Security-Policy':"default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"});res.end(readFileSync(asset));
+ if(!['GET','HEAD'].includes(method))fail(405,'Méthode non autorisée');const root=resolve('dist');let asset=resolve(root,'.'+decodeURIComponent(path));const relativeAsset=relative(root,asset);if(relativeAsset.startsWith('..')||isAbsolute(relativeAsset))fail(403,'Accès refusé');if(!existsSync(asset)||!statSync(asset).isFile())asset=resolve(root,'index.html');if(!existsSync(asset))fail(404,'Exécutez npm run build');res.writeHead(200,{'Content-Type':({'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'})[extname(asset)]||'application/octet-stream','Content-Security-Policy':"default-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"});res.end(readFileSync(asset));
  }catch(e){send(res,e.status||500,{error:e.status?e.message:e.code?.startsWith('SQLITE_CONSTRAINT')?'Conflit de données ou référence invalide':'Erreur interne'})}});
  app.once('close',()=>db.close());return app;
 }
-if(process.argv[1]===new URL(import.meta.url).pathname){const port=Number(process.env.PORT||3001);createApp().listen(port,process.env.HOST||'127.0.0.1',()=>console.log(`Aqtheris API : port ${port}`))}
+if(process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url){const port=Number(process.env.PORT||3001);createApp().listen(port,process.env.HOST||'127.0.0.1',function(){console.log(`Aqtheris API : port ${this.address().port}`)})}
