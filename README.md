@@ -71,3 +71,7 @@ Pour la production : déploiement HTTPS, sauvegardes automatiques hors machine, 
 ## Langues et accès local
 
 Le sélecteur Español / English / Français est disponible avant et après connexion. L’espagnol est la langue initiale ; le navigateur conserve le choix. Le changement ne déconnecte pas le compte et préserve les champs de connexion. Les libellés et états sont traduits à l’affichage ; les valeurs enregistrées et les textes saisis par les utilisateurs restent inchangés. Le proxy Vite conserve explicitement le Host du navigateur pour le contrôle d’origine de l’API. Les origines étrangères restent refusées.
+
+## Footer côtier animé
+
+Illustration SVG originale et icônes à effet de volume, stockées dans le code (aucun média externe ni vidéo). Le footer figure sur la connexion et les pages internes, avec liens internes selon la session. Vagues, nuages, oiseaux et reflets sont animés en CSS ; le bouton de pause conserve sa préférence dans le navigateur. `prefers-reduced-motion` désactive les animations. Textes disponibles en espagnol, anglais et français. Validation dans Chromium : bureau/mobile sans débordement horizontal, inscription, navigation du footer, pause persistante et mouvement réduit. Le site 3dicons.co était inaccessible depuis cet environnement ; aucun fichier de ce site n’a été incorporé.
