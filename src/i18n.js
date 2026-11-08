@@ -1,4 +1,7 @@
 const messages={
+"Créez un site avant d’y associer un contact.":["Crea un sitio antes de asociarle un contacto.","Create a site before adding a contact to it."],
+"Votre rôle permet d’ajouter des contacts. Un administrateur doit d’abord vous attribuer un site.":["Tu rol permite agregar contactos. Primero la administradora debe asignarte un sitio.","Your role allows adding contacts. An administrator must first assign you a site."],
+"Aller aux sites":["Ir a sitios acuícolas","Go to aquaculture sites"],
 "modules":["módulos","modules"],
 "Utiliser les permissions du rôle":["Usar permisos del rol","Use role permissions"],
 "Aucun module personnalisé. Utilisez les permissions du rôle pour repartir simplement.":["No hay módulos personalizados. Usa los permisos del rol para comenzar fácilmente.","No custom modules selected. Use role permissions to get started easily."],

@@ -59,7 +59,7 @@ npm test
 | Cambio de contraseña por recuperación | Código de un solo uso; sesiones anteriores revocadas. |
 | Reiniciar, respaldar y restaurar | Se conservan registros y archivos; las sesiones/códigos se invalidan al restaurar. |
 
-La suite contiene ocho escenarios de integración, cada uno con varias comprobaciones; no son ocho clics aislados.
+La suite contiene nueve escenarios de integración, cada uno con varias comprobaciones; no son nueve clics aislados.
 
 ## Casos comprobados en navegador
 
@@ -93,3 +93,5 @@ Archivos de referencia: `server/permissions.js` (reglas de módulos), `server/ap
 ## Asignación simplificada de roles
 
 En Equipo, cambiar el desplegable de rol guarda y activa sus módulos predeterminados sin otra configuración. Si la cuenta tenía permisos personalizados, «Usar permisos del rol» los restablece con un clic. Administrar accesos muestra un resumen de módulos; los sitios son opcionales para comenzar y la personalización se encuentra en Opciones avanzadas. Los usuarios deben recargar su sesión abierta para actualizar el menú. No se entregan datos de sitios no asignados.
+
+En Contactos, los roles con permiso de creación ven el botón Agregar deshabilitado y una explicación si no hay sitios disponibles. Asignar un sitio al veterinario habilita la creación al recargar; no es necesario cambiar su rol ni crear una cuenta nueva. Este recorrido está cubierto por una prueba de integración, incluyendo el rechazo de contactos de otros sitios.
