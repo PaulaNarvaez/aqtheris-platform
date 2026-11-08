@@ -10,7 +10,7 @@ test('API starts from a filesystem path containing spaces and serves production 
  mkdirSync(join(root,'dist'));
  const {writeFileSync}=await import('node:fs');
  writeFileSync(join(root,'dist','index.html'),'<h1>Aqtheris startup test</h1>');
- copyFileSync(resolve('server/app.js'),join(root,'app.mjs'));
+ copyFileSync(resolve('server/app.js'),join(root,'app.mjs'));copyFileSync(resolve('server/permissions.js'),join(root,'permissions.js'));
  const child=spawn(process.execPath,[join(root,'app.mjs')],{cwd:root,env:{...process.env,PORT:'0',DATA_DIR:join(root,'private data')},stdio:['ignore','pipe','pipe']});
  let output='';child.stderr.on('data',chunk=>output+=chunk);
  try{

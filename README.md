@@ -24,7 +24,7 @@ npm start
 ## Fonctionnalités implémentées
 
 - Authentification par mot de passe haché/salé scrypt, sessions HttpOnly de huit heures, limitation des tentatives de connexion.
-- Administrateur, vétérinaire, laboratoire, administratif et consultation : droits d’écriture par module et autorisation par site sur l’API. Les administrateurs voient tous les sites ; les autres comptes n’accèdent qu’aux sites attribués. Les noms/emails des membres sont visibles par les membres connectés pour permettre l’affectation des tâches.
+- Administrateur, vétérinaire, laboratoire, administratif et consultation : droits d’écriture par module et autorisation par site sur l’API. Les administrateurs voient tous les sites ; les autres comptes n’accèdent qu’aux sites attribués. Seul l’administrateur peut consulter le répertoire complet des comptes et leurs emails. Les sélecteurs de responsables utilisent des noms/identifiants limités au contexte autorisé.
 - Organisations, sites distincts, contacts, unités de production et dossiers.
 - Visites et états du rapport séparés, mesures et origine de l’information, validation professionnelle enregistrée avant passage du rapport à « Validé ».
 - Échantillons, envois, liens échantillon/envoi, demandes d’analyses, résultats et revues professionnelles.
@@ -62,7 +62,7 @@ La restauration contrôle l’intégrité SQLite, les références et la présen
 
 ## Écart avec le périmètre complet de la proposition
 
-À développer avant une livraison complète : projets multiples et leurs permissions ; sélection fine des types d’information ; calendrier et heures/durées des rendez-vous ; invitations, disponibilités, annulations motivées et participants ; formulaires scientifiques validés avec les professionnels ; photographies prévisualisées ; informations temporelles structurées des contacts ; moteur de rappels idempotent ; rapports PDF ; imports historiques ; récupération/changement de mot de passe et désactivation des comptes ; gestion et recherche des archives ; tests navigateur et accessibilité complets. La liste des visites est actuellement une liste datée, pas un calendrier.
+À développer avant une livraison complète : projets multiples et leurs permissions ; sélection fine des types d’information ; calendrier et heures/durées des rendez-vous ; invitations, disponibilités, annulations motivées et participants ; formulaires scientifiques validés avec les professionnels ; photographies prévisualisées ; informations temporelles structurées des contacts ; moteur de rappels idempotent ; rapports PDF ; imports historiques ; récupération par email et désactivation des comptes ; restauration générale des archives hors documents ; tests navigateur et accessibilité complets. La liste des visites est actuellement une liste datée, pas un calendrier.
 
 À décider avec l’institution : responsable fonctionnel, formulaires, hébergement, volume, politique de conservation, données de recherche, partage avec le registre D65-7520, OneDrive/SharePoint et éventuel mode hors connexion. Aucune intégration externe, notification ou interprétation clinique automatique n’est activée.
 
@@ -93,3 +93,11 @@ Cette commande nécessite l’accès local à la base de données et produit un 
 Les fenêtres se ferment avec un clic sur le fond extérieur ou Échap. Les formulaires de dossiers conservent leur brouillon de session. Texte de base 15 px, menu avec icônes SVG, libellés et exemples de saisie espacés. Le footer animé apparaît désormais uniquement sur le dashboard ; il respecte la préférence de mouvement réduit du système. Les flèches diagonales répétitives ont été retirées.
 
 Le menu conserve sa position verticale sur ordinateur et horizontale sur mobile lors des changements de module, ainsi que le focus clavier. Le footer utilise désormais des vagues plus amples, des nuages et oiseaux plus mobiles, des reflets et des icônes flottantes. Le bouton de pause a été retiré ; les anciennes préférences de pause sont ignorées. Validation Chromium : position et focus conservés sur quatre modules, navigation mobile, animation active et absence de débordement.
+
+## Accès par module et correction documentaire
+
+Les modules visibles et accessibles sont désormais calculés par rôle, sites et sélection explicite de l’administrateur dans Équipe → Gérer les accès. Aucun module ne se débloque automatiquement. Sans site attribué, les comptes non administrateurs n’accèdent qu’au résumé et au profil personnel. Équipe et Historique sont réservés à l’administrateur. Une restriction d’interface est doublée d’un contrôle serveur.
+
+Les documents peuvent être remplacés par leur auteur ou l’administrateur : nouvelle version liée, ancienne version archivée atomiquement. L’administrateur peut retirer/restaurer un document avec motif et révision ; les fichiers archivés ne sont plus consultables ni téléchargeables par les comptes ordinaires. Le contenu original reste conservé, sans suppression définitive. Les doublons exacts de fichiers par site, les extensions non autorisées, les dates impossibles et certains doublons de saisie sont contrôlés.
+
+Guide de test en espagnol : [docs/PRUEBAS-DE-USO.md](docs/PRUEBAS-DE-USO.md). Il distingue les contrôles automatisés, les scénarios vérifiés dans Chromium et les limites qui restent à examiner avec des cas réels.

@@ -1,0 +1,4 @@
+export const operationalModules=['sites','contacts','units','dossiers','visits','measurements','samples','shipments','shipment_samples','analyses','results','reviews','validations','actions','documents'];
+const readable={veterinarian:operationalModules,laboratory:['sites','visits','samples','shipments','shipment_samples','analyses','results','documents'],administrative:['sites','contacts','visits','shipments','actions','documents'],viewer:operationalModules};
+export function modulesFor(user,allModules){if(user.role==='admin')return allModules;const sites=JSON.parse(user.site_ids||'[]');if(!sites.length)return [];const configured=user.module_access===null||user.module_access===undefined?readable[user.role]||[]:JSON.parse(user.module_access);return configured.filter(module=>(readable[user.role]||[]).includes(module))}
+export function assignableModules(role){return readable[role]||[]}
