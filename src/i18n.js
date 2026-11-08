@@ -1,3 +1,4 @@
+import {publicMessages} from './public-locales.js';
 const messages={
 "Créez un site avant d’y associer un contact.":["Crea un sitio antes de asociarle un contacto.","Create a site before adding a contact to it."],
 "Votre rôle permet d’ajouter des contacts. Un administrateur doit d’abord vous attribuer un site.":["Tu rol permite agregar contactos. Primero la administradora debe asignarte un sitio.","Your role allows adding contacts. An administrator must first assign you a site."],
@@ -973,11 +974,11 @@ const messages={
     "Read only"
   ]
 };
-export const languages={es:'Español',en:'English',fr:'Français'};
+export const languages={es:'Español',en:'English',fr:'Français',nl:'Nederlands',de:'Deutsch'};
 let selected='es';try{const saved=localStorage.getItem('aq-language');if(Object.hasOwn(languages,saved))selected=saved}catch{}
 export let locale=selected;
-export function t(text){const output=locale==='fr'?text:messages[text]?.[locale==='es'?0:1]??text;return String(output).replaceAll(' ↗','').replaceAll('↗','')}
+export function t(text){const entry=publicMessages[text]||messages[text];const index={es:0,en:1,nl:2,de:3}[locale];const output=locale==='fr'?text:entry?.[index]??entry?.[1]??text;return String(output).replaceAll(' ↗','').replaceAll('↗','')}
 export function saveLanguage(language){if(!Object.hasOwn(languages,language))return;locale=language;try{localStorage.setItem('aq-language',language)}catch{}}
-export function languagePicker(){return `<label class="language-picker"><span>${locale==='es'?'Idioma':locale==='en'?'Language':'Langue'}</span><select id="language" aria-label="${locale==='es'?'Idioma':locale==='en'?'Language':'Langue'}">${Object.entries(languages).map(([key,name])=>`<option value="${key}" ${locale===key?'selected':''}>${name}</option>`).join('')}</select></label>`}
-export function bindLanguage(onChange){document.documentElement.lang=locale;document.title=locale==='es'?'Aqtheris — Seguimiento acuícola':locale==='en'?'Aqtheris — Aquaculture tracking':'Aqtheris — Suivi aquacole';const select=document.querySelector('#language');if(select)select.onchange=()=>{saveLanguage(select.value);onChange?.()}}
-export function translateError(message){if(messages[message])return t(message);const patterns=[['Champ obligatoire : ',{es:'Campo obligatorio: ',en:'Required field: '}],['Champ invalide : ',{es:'Campo inválido: ',en:'Invalid field: '}],['Valeur invalide : ',{es:'Valor inválido: ',en:'Invalid value: '}],['Référence invalide : ',{es:'Referencia inválida: ',en:'Invalid reference: '}]];for(const [prefix,translations]of patterns)if(message.startsWith(prefix))return (translations[locale]||prefix)+message.slice(prefix.length);return message}
+export function languagePicker(){return `<label class="language-picker"><span>${{es:'Idioma',en:'Language',fr:'Langue',nl:'Taal',de:'Sprache'}[locale]}</span><select id="language" aria-label="${{es:'Idioma',en:'Language',fr:'Langue',nl:'Taal',de:'Sprache'}[locale]}">${Object.entries(languages).map(([key,name])=>`<option value="${key}" ${locale===key?'selected':''}>${name}</option>`).join('')}</select></label>`}
+export function bindLanguage(onChange){document.documentElement.lang=locale;document.title={es:'Aqtheris — Seguimiento acuícola',en:'Aqtheris — Aquaculture tracking',fr:'Aqtheris — Suivi aquacole',nl:'Aqtheris — Aquacultuurmonitoring',de:'Aqtheris — Aquakulturmonitoring'}[locale];const select=document.querySelector('#language');if(select)select.onchange=()=>{saveLanguage(select.value);onChange?.()}}
+export function translateError(message){if(publicMessages[message]||messages[message])return t(message);const patterns=[['Champ obligatoire : ',{es:'Campo obligatorio: ',en:'Required field: '}],['Champ invalide : ',{es:'Campo inválido: ',en:'Invalid field: '}],['Valeur invalide : ',{es:'Valor inválido: ',en:'Invalid value: '}],['Référence invalide : ',{es:'Referencia inválida: ',en:'Invalid reference: '}]];for(const [prefix,translations]of patterns)if(message.startsWith(prefix))return (translations[locale]||prefix)+message.slice(prefix.length);return message}

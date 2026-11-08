@@ -105,3 +105,11 @@ Guide de test en espagnol : [docs/PRUEBAS-DE-USO.md](docs/PRUEBAS-DE-USO.md). Il
 ## Rôles simplifiés
 
 Changer le rôle directement dans Équipe applique ses modules par défaut. « Utiliser les permissions du rôle » supprime une personnalisation précédente en un clic. Le dialogue d’accès sépare le résumé du rôle, les sites facultatifs au démarrage et les options avancées de personnalisation. Un site n’est plus nécessaire pour voir les modules ; les données restent limitées aux sites attribués. Cette règle remplace le comportement précédent qui masquait tout module en l’absence de site.
+
+## Web pública y registro
+
+La racine `/` affiche désormais la présentation d’Aqtheris, `/login` la connexion, `/register` l’inscription et `/app` l’espace privé. Les nouvelles inscriptions restent en attente et n’obtiennent aucun rôle opérationnel ni site ; seul l’administrateur peut approuver puis attribuer les accès depuis Équipe. Les comptes existants restent actifs.
+
+Présentation et registre en cinq langues : espagnol, anglais, français, néerlandais et allemand. Les nouvelles langues couvrent les pages publiques et les principaux libellés privés ; le reste utilise l’anglais comme repli. Identité SVG locale et illustration photographique générée pour le projet. Support public autorisé : paulacnarvaez96@gmail.com. Aucun email n’est envoyé automatiquement.
+
+Instructions en espagnol : [docs/WEB-PUBLICA.md](docs/WEB-PUBLICA.md).
