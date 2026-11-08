@@ -96,8 +96,12 @@ Le menu conserve sa position verticale sur ordinateur et horizontale sur mobile 
 
 ## Accès par module et correction documentaire
 
-Les modules visibles et accessibles sont désormais calculés par rôle, sites et sélection explicite de l’administrateur dans Équipe → Gérer les accès. Aucun module ne se débloque automatiquement. Sans site attribué, les comptes non administrateurs n’accèdent qu’au résumé et au profil personnel. Équipe et Historique sont réservés à l’administrateur. Une restriction d’interface est doublée d’un contrôle serveur.
+Les modules visibles et accessibles sont désormais calculés par rôle, sites et sélection explicite de l’administrateur dans Équipe → Gérer les accès. Aucun module ne se débloque automatiquement. Sans site attribué, les modules du rôle restent visibles mais les listes sont vides et aucune écriture opérationnelle n’est autorisée. Équipe et Historique sont réservés à l’administrateur. Une restriction d’interface est doublée d’un contrôle serveur.
 
 Les documents peuvent être remplacés par leur auteur ou l’administrateur : nouvelle version liée, ancienne version archivée atomiquement. L’administrateur peut retirer/restaurer un document avec motif et révision ; les fichiers archivés ne sont plus consultables ni téléchargeables par les comptes ordinaires. Le contenu original reste conservé, sans suppression définitive. Les doublons exacts de fichiers par site, les extensions non autorisées, les dates impossibles et certains doublons de saisie sont contrôlés.
 
 Guide de test en espagnol : [docs/PRUEBAS-DE-USO.md](docs/PRUEBAS-DE-USO.md). Il distingue les contrôles automatisés, les scénarios vérifiés dans Chromium et les limites qui restent à examiner avec des cas réels.
+
+## Rôles simplifiés
+
+Changer le rôle directement dans Équipe applique ses modules par défaut. « Utiliser les permissions du rôle » supprime une personnalisation précédente en un clic. Le dialogue d’accès sépare le résumé du rôle, les sites facultatifs au démarrage et les options avancées de personnalisation. Un site n’est plus nécessaire pour voir les modules ; les données restent limitées aux sites attribués. Cette règle remplace le comportement précédent qui masquait tout module en l’absence de site.

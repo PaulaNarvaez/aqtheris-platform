@@ -8,8 +8,8 @@ No hay desbloqueo por cantidad de proyectos. Esta versión todavía organiza el 
 
 1. La administradora crea la cuenta en **Equipo**.
 2. En **Administrar accesos**, selecciona el rol y los sitios.
-3. Puede usar los módulos predeterminados del rol o elegir un subconjunto.
-4. Sin sitios, el usuario solo dispone de Resumen y Mi perfil.
+3. Elegir el rol activa sus módulos predeterminados. El rol también puede cambiarse directamente en la fila del usuario. La personalización queda en Opciones avanzadas.
+4. Sin sitios, el usuario ve los módulos de su rol, pero sus listas están vacías y no puede crear registros de trabajo.
 5. Solo la administradora ve Equipo, Historial, exportación completa y documentos retirados.
 
 El rol limita qué se puede modificar. Habilitar un módulo a un usuario de solo lectura no le concede permiso de escritura. Los cambios de acceso se comprueban en cada petición, también si ya inició sesión. La navegación vuelve a consultar sus permisos; no es necesario crear otra cuenta.
@@ -33,7 +33,7 @@ npm test
 
 | Error o situación | Resultado esperado |
 |---|---|
-| Veterinario sin sitios asignados | No accede a módulos de trabajo por API. Solo Resumen y Mi perfil. |
+| Veterinario sin sitios asignados | Ve los módulos del rol, con listas vacías. No accede a registros de otros sitios ni puede escribir sin sitio. |
 | Veterinario intenta abrir Equipo o Historial | Acceso rechazado. |
 | Usuario tiene solo Sitios, Visitas y Documentos | Otros módulos rechazados por el servidor. |
 | Usuario intenta cambiar sus propios permisos | Rechazado. |
@@ -89,3 +89,7 @@ Estos casos siguen pendientes de validación de negocio; no se consideran resuel
 Anota: módulo, rol, pasos, resultado esperado, resultado real, fecha/hora y texto del error. Si envías captura, oculta contraseñas, códigos de recuperación y datos de personas o explotaciones reales. Para un fallo del servidor, incluye la salida relevante de la terminal de `npm run dev`, sin valores de variables ni credenciales.
 
 Archivos de referencia: `server/permissions.js` (reglas de módulos), `server/app.js` (sitios/validación/auditoría), `tests/access-documents.test.js` (permisos y archivos), `src/main.js` (menú y formularios).
+
+## Asignación simplificada de roles
+
+En Equipo, cambiar el desplegable de rol guarda y activa sus módulos predeterminados sin otra configuración. Si la cuenta tenía permisos personalizados, «Usar permisos del rol» los restablece con un clic. Administrar accesos muestra un resumen de módulos; los sitios son opcionales para comenzar y la personalización se encuentra en Opciones avanzadas. Los usuarios deben recargar su sesión abierta para actualizar el menú. No se entregan datos de sitios no asignados.

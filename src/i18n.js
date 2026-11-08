@@ -1,4 +1,18 @@
 const messages={
+"modules":["módulos","modules"],
+"Utiliser les permissions du rôle":["Usar permisos del rol","Use role permissions"],
+"Aucun module personnalisé. Utilisez les permissions du rôle pour repartir simplement.":["No hay módulos personalizados. Usa los permisos del rol para comenzar fácilmente.","No custom modules selected. Use role permissions to get started easily."],
+"Choisissez un rôle : ses modules sont activés automatiquement. Les sites limitent uniquement les données visibles.":["Elige un rol: sus módulos se activan automáticamente. Los sitios solo limitan los datos que puede consultar.", "Choose a role: its modules are enabled automatically. Sites only limit which records can be viewed."],
+"Choisir les sites (facultatif pour commencer)":["Asignar sitios (opcional para comenzar)", "Assign sites (optional to get started)"],
+"Sans site, les modules restent visibles mais ne montrent aucune donnée.":["Sin sitios asignados, los módulos siguen visibles pero no muestran datos.", "Without assigned sites, modules stay visible but show no records."],
+"Vous pourrez attribuer des sites plus tard.":["Puedes asignar los sitios más adelante.", "You can assign sites later."],
+"Options avancées":["Opciones avanzadas", "Advanced options"],
+"Personnaliser les modules de ce rôle":["Personalizar los módulos de este rol", "Customize modules for this role"],
+"Modules inclus":["Módulos incluidos", "Included modules"],
+"Vos modules sont prêts. Aucun site ne vous est encore attribué : les listes resteront vides pour le moment.":["Tus módulos están disponibles. Aún no tienes sitios asignados: por ahora las listas estarán vacías.", "Your modules are ready. No sites are assigned yet, so lists will be empty for now."],
+"Un rôle suffit pour activer les modules. Attribuez ensuite des sites pour donner accès à leurs données.":["Elige un rol para activar sus módulos. Después puedes asignar sitios para dar acceso a sus datos.", "Choose a role to enable its modules. Then assign sites to grant access to their records."],
+"Rôle mis à jour. Les modules correspondants sont activés.":["Rol actualizado. Sus módulos ya están activados.", "Role updated. Its modules are now enabled."],
+
 "Gérer les accès":["Administrar accesos", "Manage access"],
 "Les modules ne se débloquent pas automatiquement. Choisissez les sites et les modules autorisés.":["Los módulos no se abren automáticamente. Elige los sitios y módulos autorizados.", "Modules do not unlock automatically. Choose authorized sites and modules."],
 "Modules autorisés":["Módulos autorizados", "Authorized modules"],
