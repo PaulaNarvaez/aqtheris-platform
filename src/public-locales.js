@@ -149,12 +149,6 @@ export const publicMessages={
     "ONTWERP & ONTWIKKELING",
     "KONZEPT & ENTWICKLUNG"
   ],
-  "Créée et développée par Paula Cortes Narvaez.": [
-    "Creada y desarrollada por Paula Cortes Narvaez.",
-    "Created and developed by Paula Cortes Narvaez.",
-    "Ontworpen en ontwikkeld door Paula Cortes Narvaez.",
-    "Konzipiert und entwickelt von Paula Cortes Narvaez."
-  ],
   "Une application web construite progressivement autour des besoins de suivi technique et sanitaire des exploitations aquacoles.": [
     "Una aplicación web construida progresivamente en torno a las necesidades de seguimiento técnico y sanitario de las explotaciones acuícolas.",
     "A web application developed progressively around the technical and health monitoring needs of aquaculture sites.",
@@ -814,5 +808,29 @@ export const publicMessages={
     "Authorized records will appear here.",
     "Toegestane gegevens verschijnen hier.",
     "Zugelassene Einträge werden hier angezeigt."
+  ],
+  "Créé par": [
+    "Creado por",
+    "Created by",
+    "Gemaakt door",
+    "Erstellt von"
+  ],
+  "avec": [
+    "con",
+    "with",
+    "met",
+    "mit"
+  ],
+  "amour": [
+    "amor",
+    "love",
+    "liefde",
+    "Liebe"
+  ],
+  "Pour un accès au compte, un incident technique ou une demande de récupération de données, contactez le support Aqtheris.": [
+    "Para acceder a tu cuenta, resolver un problema técnico o solicitar recuperación de datos, contacta al soporte de Aqtheris.",
+    "For account access, technical issues or data recovery requests, contact Aqtheris support.",
+    "Neem voor accounttoegang, technische problemen of gegevensherstel contact op met Aqtheris-ondersteuning.",
+    "Für Kontozugang, technische Probleme oder Datenwiederherstellung kontaktiere den Aqtheris-Support."
   ]
 };

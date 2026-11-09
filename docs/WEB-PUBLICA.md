@@ -14,7 +14,7 @@ Estas direcciones son locales. Compartirlas no publica el servicio en Internet. 
 
 ## Presentación
 
-Portada con paisaje acuático original generado para el proyecto, tarjetas interactivas, secciones Quiénes somos / Qué hacemos / Soporte, autoría de **Paula Cortes Narvaez**, contacto público autorizado **paulacnarvaez96@gmail.com** y footer propio. No incorpora un equipo ficticio, testimonios ni estadísticas no verificadas.
+Portada con paisaje acuático original generado para el proyecto, tarjetas interactivas, secciones Quiénes somos / Qué hacemos / Soporte, presentación centrada en la plataforma, contacto público autorizado **paulacnarvaez96@gmail.com** y footer propio. No incorpora un equipo ficticio, testimonios ni estadísticas no verificadas.
 
 Icono original en `public/brand.svg`: A, onda y gota, con colores azul petróleo y turquesa. Sirve como logo, favicon y descarga SVG. La fotografía generada está en `public/aquatic-landscape.png`; no representa un sitio de un usuario ni un caso profesional real. No depende de imágenes remotas para funcionar.
 
@@ -47,3 +47,9 @@ El aviso de uso de datos de registro es informativo y debe ajustarse con la inst
 - Pruebas de API: alta pendiente, bloqueo de acceso, intentos de autoasignarse administrador, aprobación exclusiva de administradora, revocación de sesión al suspender y auditoría.
 - Chromium: navegación entre portada/registro/login/app, cinco idiomas públicos, conservación de campos al traducir, solicitud pendiente, aprobación desde Equipo, ingreso posterior y vista móvil sin desbordamiento de página.
 - Compilación y suites existentes verificadas.
+
+## Ajuste editorial y de legibilidad
+
+Se retiró la presentación personal y el nombre de la creadora de las pantallas públicas. El único crédito del footer es «Creado por **paujnarvaez** con ♥», traducido según el idioma. También se aplica al footer del dashboard. El correo autorizado de soporte permanece. No se modifica el nombre de cuentas privadas ni la autoría Git de PaulaNarvaez.
+
+Se amplió la tipografía pública, los controles y los textos de la aplicación; los iconos propios recibieron bases translúcidas, luces y relieve. Inspora no pudo inspeccionarse porque su dominio está bloqueado en el entorno: no se descargaron ni copiaron recursos de ese sitio.
