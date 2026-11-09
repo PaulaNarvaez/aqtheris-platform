@@ -37,3 +37,20 @@ aside nav button .nav-icon-shell,aside nav button.active .nav-icon-shell,aside n
 @media(prefers-reduced-motion:reduce){.chart-bar,.donut-segment,.dashboard-emblem img,.water-art:after,.water-art .orbit,.water-art .orb-one,.water-art .orb-two,.aqua-particle{animation:none!important}.dashboard-emblem{transform:none!important;transition:none!important}}
 .chart-viewport{width:100%;overflow-x:auto;overscroll-behavior-x:contain}.chart-viewport .visits-chart{min-width:500px}.chart-axis{font-size:14px}.chart-year{font-size:10px}.dashboard-coast-footer{display:block;width:100%;margin:5px 0 0;padding:0;border:0;border-radius:0;background:#f6f8f5;overflow:hidden}.dashboard-coast-footer .coast-scene{height:190px;background:#90bdc6}.dashboard-coast-credit{border-top:1px solid #e1eae2;min-height:76px;display:grid;place-items:center;padding:22px;text-align:center}.dashboard-coast-credit p{margin:0;font-size:16px;color:#6a8577}.dashboard-coast-credit strong{color:#295b4b;font-weight:650}@media(max-width:600px){.dashboard-coast-footer .coast-scene{height:145px}.dashboard-coast-credit{padding:20px 16px}.dashboard-coast-credit p{font-size:15px}}
 .stats strong{font-family:'Manrope',sans-serif}
+
+/* Frame the full coast instead of cropping the sky and foreground into a strip. */
+.dashboard-coast-footer{width:calc(100% - 80px);margin:12px 40px 30px;border:1px solid #d8e8e2;border-radius:24px;background:#fbfdfb;box-shadow:0 16px 40px -30px #245e6480;flex-shrink:0}
+.dashboard-coast-footer .coast-scene{height:clamp(250px,23vw,380px);background:#b8d9df}
+.dashboard-coast-credit{min-height:82px;border-top:0;background:linear-gradient(#fff,#f3f8f5);padding:24px}
+.dashboard-coast-credit p{font-size:17px;letter-spacing:.01em}
+.dashboard-coast-credit .credit-heart{display:inline-block;animation:coast-heart 2.8s ease-in-out infinite}
+.coast-sailboat{animation:coast-sailing 6s ease-in-out infinite}
+.coast-fish{animation:coast-fish-swim 12s ease-in-out infinite}
+.coast-sparkles{animation:coast-sparkle 3s ease-in-out infinite}
+@keyframes coast-sailing{0%,100%{transform:translate(-15px,1px) rotate(-3deg)}50%{transform:translate(18px,-6px) rotate(3deg)}}
+@keyframes coast-fish-swim{0%,100%{transform:translateX(-35px);opacity:.2}50%{transform:translateX(35px);opacity:.45}}
+@keyframes coast-sparkle{0%,100%{opacity:.2;transform:translateY(0)}50%{opacity:.95;transform:translateY(-5px)}}
+@keyframes coast-heart{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+@media(max-width:1150px){.dashboard-coast-footer{width:calc(100% - 48px);margin:12px 24px 24px}}
+@media(max-width:600px){.dashboard-coast-footer{width:calc(100% - 32px);margin:8px 16px 20px;border-radius:18px}.dashboard-coast-footer .coast-scene{height:220px}.dashboard-coast-credit{min-height:74px;padding:20px 12px}.dashboard-coast-credit p{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.dashboard-coast-credit .credit-heart{animation:none}}
