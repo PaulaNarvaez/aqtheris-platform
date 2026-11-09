@@ -20,3 +20,19 @@ test('veterinarian can create contacts after site assignment without needing ano
 const vet=await call('users','POST',{name:'Contact Vet',email:'contact-vet@example.test',role:'veterinarian',password:'test-password-123456'},201);const session=await login('contact-vet@example.test');let schema=await call('schema','GET',undefined,200,session);assert.ok(schema.readable.includes('contacts'));assert.ok(!schema.writable.includes('contacts'));assert.deepEqual((await call('options','GET',undefined,200,session)).sites,[]);await call('contacts','POST',{name:'Without access',site_id:site.id},403,session);
 await call('users/'+vet.id,'PATCH',{site_ids:[site.id],module_access:null});schema=await call('schema','GET',undefined,200,session);assert.ok(schema.writable.includes('contacts'));assert.equal((await call('options','GET',undefined,200,session)).sites.length,1);const contact=await call('contacts','POST',{name:'Site manager',site_id:site.id,email:'manager@example.test',phone:'+32 1234',function:'Responsable'},201,session);assert.equal(contact.name,'Site manager');assert.equal(contact.site_id,site.id);await call('contacts','POST',{name:'Another site',site_id:other.id},403,session);await call('users/'+vet.id,'PATCH',{module_access:['sites']});await call('contacts','POST',{name:'No module access',site_id:site.id},403,session);
 }));
+
+test('visits retain archived dossier links when edited or archived without allowing new archived references',()=>fixture(async({call,site,other})=>{
+ const dossier=await call('dossiers','POST',{name:'Original dossier',site_id:site.id,status:'Ouvert'},201);
+ const visitData={name:'Visit',site_id:site.id,dossier_id:dossier.id,date:'2026-11-13',status:'À organiser',report_status:'Brouillon'};
+ const visit=await call('visits','POST',visitData,201);
+ await call('dossiers/'+dossier.id,'PATCH',{revision:dossier.revision,archived:1});
+ const edited=await call('visits/'+visit.id,'PATCH',{revision:visit.revision,notes:'Updated notes'});
+ assert.equal(edited.dossier_id,dossier.id);
+ const archived=await call('visits/'+visit.id,'PATCH',{revision:edited.revision,archived:1});
+ assert.equal(archived.archived,1);assert.equal(archived.dossier_id,dossier.id);
+ await call('visits','POST',{...visitData,name:'New visit'},400);
+ const plain=await call('visits','POST',{...visitData,dossier_id:'',name:'Unlinked visit'},201);
+ await call('visits/'+plain.id,'PATCH',{revision:plain.revision,dossier_id:dossier.id},400);
+ await call('visits/'+visit.id,'PATCH',{revision:archived.revision,site_id:other.id},400);
+ const logs=await call('audit');assert.ok(logs.some(row=>row.record_id===visit.id&&JSON.parse(row.after_json).archived===1));
+}));

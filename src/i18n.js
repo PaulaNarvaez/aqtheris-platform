@@ -1,5 +1,6 @@
 import {publicMessages} from './public-locales.js';
 const messages={
+"Référence conservée (archivée ou indisponible)":["Vínculo conservado (archivado o no disponible)","Existing link (archived or unavailable)"],
 "Créez un site avant d’y associer un contact.":["Crea un sitio antes de asociarle un contacto.","Create a site before adding a contact to it."],
 "Votre rôle permet d’ajouter des contacts. Un administrateur doit d’abord vous attribuer un site.":["Tu rol permite agregar contactos. Primero la administradora debe asignarte un sitio.","Your role allows adding contacts. An administrator must first assign you a site."],
 "Aller aux sites":["Ir a sitios acuícolas","Go to aquaculture sites"],
