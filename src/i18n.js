@@ -1,4 +1,55 @@
+import {publicMessages} from './public-locales.js';
 const messages={
+"Créez un site avant d’y associer un contact.":["Crea un sitio antes de asociarle un contacto.","Create a site before adding a contact to it."],
+"Votre rôle permet d’ajouter des contacts. Un administrateur doit d’abord vous attribuer un site.":["Tu rol permite agregar contactos. Primero la administradora debe asignarte un sitio.","Your role allows adding contacts. An administrator must first assign you a site."],
+"Aller aux sites":["Ir a sitios acuícolas","Go to aquaculture sites"],
+"modules":["módulos","modules"],
+"Utiliser les permissions du rôle":["Usar permisos del rol","Use role permissions"],
+"Aucun module personnalisé. Utilisez les permissions du rôle pour repartir simplement.":["No hay módulos personalizados. Usa los permisos del rol para comenzar fácilmente.","No custom modules selected. Use role permissions to get started easily."],
+"Choisissez un rôle : ses modules sont activés automatiquement. Les sites limitent uniquement les données visibles.":["Elige un rol: sus módulos se activan automáticamente. Los sitios solo limitan los datos que puede consultar.", "Choose a role: its modules are enabled automatically. Sites only limit which records can be viewed."],
+"Choisir les sites (facultatif pour commencer)":["Asignar sitios (opcional para comenzar)", "Assign sites (optional to get started)"],
+"Sans site, les modules restent visibles mais ne montrent aucune donnée.":["Sin sitios asignados, los módulos siguen visibles pero no muestran datos.", "Without assigned sites, modules stay visible but show no records."],
+"Vous pourrez attribuer des sites plus tard.":["Puedes asignar los sitios más adelante.", "You can assign sites later."],
+"Options avancées":["Opciones avanzadas", "Advanced options"],
+"Personnaliser les modules de ce rôle":["Personalizar los módulos de este rol", "Customize modules for this role"],
+"Modules inclus":["Módulos incluidos", "Included modules"],
+"Vos modules sont prêts. Aucun site ne vous est encore attribué : les listes resteront vides pour le moment.":["Tus módulos están disponibles. Aún no tienes sitios asignados: por ahora las listas estarán vacías.", "Your modules are ready. No sites are assigned yet, so lists will be empty for now."],
+"Un rôle suffit pour activer les modules. Attribuez ensuite des sites pour donner accès à leurs données.":["Elige un rol para activar sus módulos. Después puedes asignar sitios para dar acceso a sus datos.", "Choose a role to enable its modules. Then assign sites to grant access to their records."],
+"Rôle mis à jour. Les modules correspondants sont activés.":["Rol actualizado. Sus módulos ya están activados.", "Role updated. Its modules are now enabled."],
+
+"Gérer les accès":["Administrar accesos", "Manage access"],
+"Les modules ne se débloquent pas automatiquement. Choisissez les sites et les modules autorisés.":["Los módulos no se abren automáticamente. Elige los sitios y módulos autorizados.", "Modules do not unlock automatically. Choose authorized sites and modules."],
+"Modules autorisés":["Módulos autorizados", "Authorized modules"],
+"Utiliser les modules du profil":["Usar los módulos predeterminados del rol", "Use default modules for this role"],
+"Sans site attribué, seuls le résumé et le profil personnel sont accessibles.":["Sin sitios asignados, solo están disponibles el resumen y el perfil personal.", "Without assigned sites, only the overview and personal profile are available."],
+"Les accès dépendent des sites et modules attribués par l’administrateur. Aucun module ne se débloque automatiquement.":["El acceso depende de los sitios y módulos asignados por la administradora. Ningún módulo se abre automáticamente.", "Access depends on sites and modules assigned by the administrator. No module unlocks automatically."],
+"Tous les modules":["Todos los módulos", "All modules"],
+"Aucun module":["Sin módulos", "No modules"],
+"Aucun site attribué. Contactez votre administrateur pour obtenir un accès.":["No tienes sitios asignados. Contacta a tu administradora para obtener acceso.", "No sites assigned. Contact your administrator for access."],
+"Afficher les documents retirés et remplacés":["Mostrar documentos retirados y reemplazados", "Show withdrawn and replaced documents"],
+"Archivé":["Archivado", "Archived"],
+"Retirer ce document":["Retirar documento", "Withdraw document"],
+"Restaurer ce document":["Restaurar documento", "Restore document"],
+"Le fichier original et son historique restent conservés. Il ne s’agit pas d’une suppression définitive.":["El archivo original y su historial se conservan. No se elimina definitivamente.", "The original file and its history are preserved. This is not permanent deletion."],
+"Motif":["Motivo", "Reason"],
+"Expliquez la correction (5 caractères minimum)…":["Explica la corrección (mínimo 5 caracteres)…", "Explain the correction (at least 5 characters)…"],
+"Confirmer":["Confirmar", "Confirm"],
+"Remplacé par":["Reemplazado por", "Replaced by"],
+"Remplacer le fichier":["Reemplazar archivo", "Replace file"],
+"Fichiers acceptés : PDF, images, CSV, Excel, Word et texte. Maximum 10 Mo. Une correction conserve la version précédente.":["Archivos aceptados: PDF, imágenes, CSV, Excel, Word y texto. Máximo 10 MB. Una corrección conserva la versión anterior.", "Accepted files: PDF, images, CSV, Excel, Word and text. Maximum 10 MB. Corrections preserve the previous version."],
+"Module non autorisé":["No tienes acceso a este módulo.", "You do not have access to this module."],
+"Profil invalide":["Rol no válido.", "Invalid role."],
+"Vous ne pouvez pas modifier votre propre rôle":["No puedes modificar tu propio rol.", "You cannot change your own role."],
+"Modules invalides pour ce profil":["Revisa los módulos seleccionados para este rol.", "Check the selected modules for this role."],
+"Seul l’auteur ou l’administrateur peut remplacer ce document":["Solo quien subió el archivo o la administradora pueden reemplazarlo.", "Only the uploader or administrator may replace this document."],
+"Indiquez un motif de 5 caractères minimum":["Indica un motivo de al menos 5 caracteres.", "Enter a reason of at least 5 characters."],
+"Un document remplacé ne peut pas être restauré":["Un documento reemplazado no puede restaurarse. Usa la versión actual.", "A replaced document cannot be restored. Use the current version."],
+"État du document incompatible":["El estado del documento cambió. Recarga la página.", "The document state has changed. Reload the page."],
+"Type de fichier non autorisé":["Ese tipo de archivo no está permitido. Usa PDF, imágenes, CSV, Excel, Word o texto.", "That file type is not allowed. Use PDF, images, CSV, Excel, Word or text."],
+"Ce fichier existe déjà pour ce site":["Ese archivo ya existe en este sitio. Revisa el registro antes de volver a subirlo.", "That file already exists for this site. Check the record before uploading again."],
+"Le responsable n’a pas accès à ce site":["La persona responsable no tiene acceso a ese sitio.", "The assignee does not have access to that site."],
+"La nouvelle version doit être différente":["Indica un número de versión diferente al anterior.", "Enter a version different from the previous one."],
+
 "Nom de l’organisation":["Nombre de la organización", "Organization name"],
 "Nom du site":["Nombre del sitio", "Site name"],
 "Titre du document":["Título del documento", "Document title"],
@@ -923,11 +974,11 @@ const messages={
     "Read only"
   ]
 };
-export const languages={es:'Español',en:'English',fr:'Français'};
+export const languages={es:'Español',en:'English',fr:'Français',nl:'Nederlands',de:'Deutsch'};
 let selected='es';try{const saved=localStorage.getItem('aq-language');if(Object.hasOwn(languages,saved))selected=saved}catch{}
 export let locale=selected;
-export function t(text){const output=locale==='fr'?text:messages[text]?.[locale==='es'?0:1]??text;return String(output).replaceAll(' ↗','').replaceAll('↗','')}
+export function t(text){const entry=publicMessages[text]||messages[text];const index={es:0,en:1,nl:2,de:3}[locale];const output=locale==='fr'?text:entry?.[index]??entry?.[1]??text;return String(output).replaceAll(' ↗','').replaceAll('↗','')}
 export function saveLanguage(language){if(!Object.hasOwn(languages,language))return;locale=language;try{localStorage.setItem('aq-language',language)}catch{}}
-export function languagePicker(){return `<label class="language-picker"><span>${locale==='es'?'Idioma':locale==='en'?'Language':'Langue'}</span><select id="language" aria-label="${locale==='es'?'Idioma':locale==='en'?'Language':'Langue'}">${Object.entries(languages).map(([key,name])=>`<option value="${key}" ${locale===key?'selected':''}>${name}</option>`).join('')}</select></label>`}
-export function bindLanguage(onChange){document.documentElement.lang=locale;document.title=locale==='es'?'Aqtheris — Seguimiento acuícola':locale==='en'?'Aqtheris — Aquaculture tracking':'Aqtheris — Suivi aquacole';const select=document.querySelector('#language');if(select)select.onchange=()=>{saveLanguage(select.value);onChange?.()}}
-export function translateError(message){if(messages[message])return t(message);const patterns=[['Champ obligatoire : ',{es:'Campo obligatorio: ',en:'Required field: '}],['Champ invalide : ',{es:'Campo inválido: ',en:'Invalid field: '}],['Valeur invalide : ',{es:'Valor inválido: ',en:'Invalid value: '}],['Référence invalide : ',{es:'Referencia inválida: ',en:'Invalid reference: '}]];for(const [prefix,translations]of patterns)if(message.startsWith(prefix))return (translations[locale]||prefix)+message.slice(prefix.length);return message}
+export function languagePicker(){return `<label class="language-picker"><span>${{es:'Idioma',en:'Language',fr:'Langue',nl:'Taal',de:'Sprache'}[locale]}</span><select id="language" aria-label="${{es:'Idioma',en:'Language',fr:'Langue',nl:'Taal',de:'Sprache'}[locale]}">${Object.entries(languages).map(([key,name])=>`<option value="${key}" ${locale===key?'selected':''}>${name}</option>`).join('')}</select></label>`}
+export function bindLanguage(onChange){document.documentElement.lang=locale;document.title={es:'Aqtheris — Seguimiento acuícola',en:'Aqtheris — Aquaculture tracking',fr:'Aqtheris — Suivi aquacole',nl:'Aqtheris — Aquacultuurmonitoring',de:'Aqtheris — Aquakulturmonitoring'}[locale];const select=document.querySelector('#language');if(select)select.onchange=()=>{saveLanguage(select.value);onChange?.()}}
+export function translateError(message){if(publicMessages[message]||messages[message])return t(message);const patterns=[['Champ obligatoire : ',{es:'Campo obligatorio: ',en:'Required field: '}],['Champ invalide : ',{es:'Campo inválido: ',en:'Invalid field: '}],['Valeur invalide : ',{es:'Valor inválido: ',en:'Invalid value: '}],['Référence invalide : ',{es:'Referencia inválida: ',en:'Invalid reference: '}]];for(const [prefix,translations]of patterns)if(message.startsWith(prefix))return (translations[locale]||prefix)+message.slice(prefix.length);return message}
