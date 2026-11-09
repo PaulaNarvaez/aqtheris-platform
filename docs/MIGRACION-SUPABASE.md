@@ -4,7 +4,7 @@
 
 Paula eligió **Supabase: PostgreSQL y almacenamiento privado**. Esta es la arquitectura objetivo, no una conexión ya activada.
 
-La versión actual sigue utilizando SQLite y archivos bajo `data/`. En esta sesión se comprobó únicamente la presencia de variables: no hay `DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL` ni `STORAGE_BUCKET` configuradas. No se leyeron valores de credenciales ni se transfirieron datos. No se conoce todavía la URL de un proyecto Supabase.
+La versión actual sigue utilizando SQLite y archivos bajo `data/`. En esta sesión se comprobó únicamente la presencia de variables: no hay `DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_DB_URL` ni `STORAGE_BUCKET` configuradas. No se leyeron valores de credenciales ni se transfirieron datos. El proyecto ya existe: `https://uzmaiawliytthyplrldi.supabase.co`, región Frankfurt. No se ha verificado una conexión autenticada.
 
 El servidor actual usa operaciones síncronas de SQLite. Establecer una variable o crear un proyecto Supabase no sustituye esa implementación: falta desarrollar y probar el adaptador asíncrono PostgreSQL, la gestión transaccional y el almacenamiento remoto antes de cambiar el entorno real. No hay una migración automática ya ejecutada ni se debe borrar `data/`.
 
@@ -48,6 +48,27 @@ La URL pública identifica el proyecto; no autoriza por sí sola a leer o migrar
 8. Probar operaciones concurrentes, errores de red, reemplazo/retirada documental y restauración.
 9. Detener escrituras durante la sincronización final y cambiar la conexión solo tras la validación. Conservar el respaldo local y un procedimiento de vuelta atrás, evitando escrituras simultáneas a dos bases.
 
+## Comprobar la conexión desde Windows
+
+En PowerShell, dentro del repositorio actualizado:
+
+```powershell
+git pull --ff-only origin work
+npm.cmd ci
+Copy-Item .env.example .env -ErrorAction Stop
+notepad .env
+```
+
+Si `.env` ya existe, no lo sobrescribas: ábrelo y añade únicamente los campos que falten. Sustituye `[YOUR-PASSWORD]` por la contraseña de **base de datos** elegida al crear el proyecto, no tu contraseña de acceso a Supabase. Guarda el archivo y ejecuta:
+
+```powershell
+npm.cmd run db:check
+```
+
+Este comando carga `.env` únicamente en el proceso de comprobación, conecta al Session pooler con TLS verificado y ejecuta `SELECT 1` dentro de una transacción de solo lectura. No crea tablas, no importa datos y no cambia el servidor de SQLite a PostgreSQL. No imprime contraseñas ni mensajes originales del driver. Los campos separados evitan tener que codificar caracteres especiales dentro de una URI. Si la contraseña contiene comillas, utiliza el otro tipo de comilla para delimitar el valor en `.env`.
+
+No compartas `.env` ni uses nombres `VITE_*` para credenciales. El archivo está ignorado por Git. Si falla TLS, configura un certificado CA de confianza del proveedor mediante `NODE_EXTRA_CA_CERTS`; nunca desactives la verificación.
+
 ## Pendiente concreto
 
-Se necesita el proyecto Supabase de Paula y su configuración segura para realizar y validar esta integración. Hasta entonces, la aplicación y los nuevos gráficos funcionan con los datos de la instalación actual. No afirmar que la base ya es remota.
+Falta comprobar la conexión con las credenciales privadas de Paula y desarrollar y validar el adaptador PostgreSQL y Storage para realizar esta integración. Hasta entonces, la aplicación y los nuevos gráficos funcionan con los datos de la instalación actual. No afirmar que la base ya es remota.
