@@ -880,5 +880,11 @@ export const publicMessages={
     "Your account is approved. Contact your administrator to assign the role and access appropriate for your work.",
     "Je account is goedgekeurd. Vraag de beheerder om de juiste rol en toegang voor je werk.",
     "Dein Konto ist freigegeben. Bitte die Administration um die passende Rolle und Zugriffsrechte."
+  ],
+  "Mot de passe modifié. Connectez-vous avec votre nouveau mot de passe.": [
+    "Contraseña actualizada. Inicia sesión nuevamente con tu nueva contraseña.",
+    "Password updated. Sign in again with your new password.",
+    "Wachtwoord bijgewerkt. Log opnieuw in met je nieuwe wachtwoord.",
+    "Passwort aktualisiert. Melde dich erneut mit deinem neuen Passwort an."
   ]
 };

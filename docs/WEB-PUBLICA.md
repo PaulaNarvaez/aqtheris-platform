@@ -59,3 +59,11 @@ Se amplió la tipografía pública, los controles y los textos de la aplicación
 El dashboard coloca el footer de crédito fuera del contenido principal, al pie del espacio de trabajo. Se mantiene «Creado por paujnarvaez con ♥». Los iconos laterales usan tamaño y base uniformes; las etiquetas pueden ocupar dos líneas en escritorio sin recortarse. Se conserva el desplazamiento del menú al navegar.
 
 La pantalla de espera dispone de «Verificar mi acceso». Tras la aprobación y asignación de rol, actualiza el espacio de trabajo sin repetir el login. Si la cuenta está aprobada pero aún no tiene módulos, el dashboard informa que debe solicitar el rol correspondiente. No se concede acceso universal por completar el registro.
+
+## Cambio y recuperación de contraseña
+
+Al cambiar la contraseña desde Mi perfil, se invalidan todas las sesiones del usuario, incluida la actual, se elimina la cookie de sesión y se vuelve automáticamente a `/login`. La pantalla confirma el cambio y completa únicamente el correo; la contraseña nueva no se guarda en el cliente. Modificar solo los datos personales sigue manteniendo la sesión actual.
+
+La recuperación con código también redirige automáticamente al login tras guardar la nueva clave. Se comprobó en Chromium el cambio de perfil, la recuperación, la caducidad de la sesión anterior y el ingreso con ambas contraseñas nuevas en datos temporales. La prueba de API incluye dos sesiones anteriores y verifica que ninguna siga accediendo al perfil.
+
+Los iconos del menú se redibujaron como símbolos SVG con trazos uniformes, sin las bases decorativas. Se mantienen las etiquetas y el desplazamiento del menú. No se agregaron dependencias ni fuentes de iconos remotas.

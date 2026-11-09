@@ -59,7 +59,7 @@ npm test
 | Cambio de contraseña por recuperación | Código de un solo uso; sesiones anteriores revocadas. |
 | Reiniciar, respaldar y restaurar | Se conservan registros y archivos; las sesiones/códigos se invalidan al restaurar. |
 
-La suite contiene nueve escenarios de integración, cada uno con varias comprobaciones; no son nueve clics aislados.
+La suite contiene once escenarios de integración, cada uno con varias comprobaciones; no son once clics aislados.
 
 ## Casos comprobados en navegador
 
