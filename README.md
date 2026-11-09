@@ -118,4 +118,4 @@ Instructions en espagnol : [docs/WEB-PUBLICA.md](docs/WEB-PUBLICA.md).
 
 Graphiques de visites par mois (périodes 3/6/12 mois) et d’actions par état, calculés uniquement sur les données autorisées, avec états vides, tableau alternatif et respect du mouvement réduit. Logo animé et bande côtière rétablie au pied du dashboard, avec le seul crédit demandé.
 
-La cible distante choisie est Supabase (PostgreSQL et fichiers privés). **La connexion n’est pas encore implémentée/activée** : l’application actuelle utilise toujours SQLite. Préparation et prérequis : [docs/MIGRACION-SUPABASE.md](docs/MIGRACION-SUPABASE.md).
+L’application utilise uniquement SQLite et les fichiers privés du dossier `data/`. Aucun service de base de données distant n’est configuré. Le choix du futur fournisseur reste à définir.

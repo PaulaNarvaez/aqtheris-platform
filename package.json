@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "db:check": "node --env-file-if-exists=.env scripts/db-check.js",
     "dev": "node scripts/dev.js",
     "build": "vite build",
     "start": "node server/app.js",
@@ -17,8 +16,5 @@
   },
   "engines": {
     "node": ">=24.0.0"
-  },
-  "dependencies": {
-    "pg": "^8.23.1"
   }
 }

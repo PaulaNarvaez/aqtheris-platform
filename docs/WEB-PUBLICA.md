@@ -74,4 +74,4 @@ Se añadieron un gráfico de visitas programadas/realizadas por mes, con selecto
 
 Hay detalle al enfocar/pasar el cursor y una tabla de datos alternativa para las visitas. Los gráficos solo aparecen cuando el usuario tiene acceso al módulo correspondiente. La tarjeta del logo incorpora movimiento suave e interacción con el puntero. La franja acuática animada del footer vuelve únicamente al dashboard, con el crédito «Creado por paujnarvaez con ♥» y sin otras leyendas. Se respeta el movimiento reducido del sistema.
 
-La base de datos remota acordada es Supabase, todavía pendiente de proyecto/configuración e implementación de integración. Ver [MIGRACION-SUPABASE.md](MIGRACION-SUPABASE.md).
+La aplicación utiliza SQLite y archivos locales privados en `data/`. No tiene una conexión de base de datos remota configurada. El proveedor futuro queda pendiente de elección.
