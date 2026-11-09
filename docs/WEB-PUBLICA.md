@@ -28,7 +28,7 @@ La aplicación privada conserva la traducción previa de español/inglés/franc�
 
 1. La persona completa nombre, correo, contraseña (12–200 caracteres), confirmación y aceptación del uso de sus datos para tramitar el acceso.
 2. La API crea una cuenta de solo lectura **pendiente**, sin sitios ni módulos asignados. Ignora cualquier rol o permiso que se intente enviar desde el cliente.
-3. La persona no puede iniciar sesión hasta que la administradora la apruebe.
+3. Al terminar el registro se redirige automáticamente al login y se completa el correo, sin guardar la contraseña. La persona puede iniciar sesión, pero solo ve una pantalla de espera con el aviso de contactar a la administradora. La API rechaza sus peticiones de datos y configuración mientras siga pendiente.
 4. En Equipo, la administradora usa **Aprobar cuenta** y asigna el rol y los sitios que correspondan. Las cuentas existentes siguen activas; no hay que crearlas otra vez.
 5. Cambiar un rol no equivale a aprobar la cuenta: son controles separados. Aprobar por sí solo tampoco entrega permisos operativos.
 
@@ -44,8 +44,8 @@ El aviso de uso de datos de registro es informativo y debe ajustarse con la inst
 
 ## Verificación
 
-- Pruebas de API: alta pendiente, bloqueo de acceso, intentos de autoasignarse administrador, aprobación exclusiva de administradora, revocación de sesión al suspender y auditoría.
-- Chromium: navegación entre portada/registro/login/app, cinco idiomas públicos, conservación de campos al traducir, solicitud pendiente, aprobación desde Equipo, ingreso posterior y vista móvil sin desbordamiento de página.
+- Pruebas de API: alta pendiente, acceso pendiente limitado a su identidad y cierre de sesión, intentos de autoasignarse administrador, aprobación exclusiva de administradora, bloqueo de operaciones al suspender y auditoría.
+- Chromium: navegación entre portada/registro/login/app, cinco idiomas públicos, conservación de campos al traducir, redirección automática al login, sesión pendiente, aprobación desde Equipo y verificación del acceso sin nuevo login y vista móvil sin desbordamiento de página.
 - Compilación y suites existentes verificadas.
 
 ## Ajuste editorial y de legibilidad
@@ -53,3 +53,9 @@ El aviso de uso de datos de registro es informativo y debe ajustarse con la inst
 Se retiró la presentación personal y el nombre de la creadora de las pantallas públicas. El único crédito del footer es «Creado por **paujnarvaez** con ♥», traducido según el idioma. También se aplica al footer del dashboard. El correo autorizado de soporte permanece. No se modifica el nombre de cuentas privadas ni la autoría Git de PaulaNarvaez.
 
 Se amplió la tipografía pública, los controles y los textos de la aplicación; los iconos propios recibieron bases translúcidas, luces y relieve. Inspora no pudo inspeccionarse porque su dominio está bloqueado en el entorno: no se descargaron ni copiaron recursos de ese sitio.
+
+## Dashboard y menú
+
+El dashboard coloca el footer de crédito fuera del contenido principal, al pie del espacio de trabajo. Se mantiene «Creado por paujnarvaez con ♥». Los iconos laterales usan tamaño y base uniformes; las etiquetas pueden ocupar dos líneas en escritorio sin recortarse. Se conserva el desplazamiento del menú al navegar.
+
+La pantalla de espera dispone de «Verificar mi acceso». Tras la aprobación y asignación de rol, actualiza el espacio de trabajo sin repetir el login. Si la cuenta está aprobada pero aún no tiene módulos, el dashboard informa que debe solicitar el rol correspondiente. No se concede acceso universal por completar el registro.

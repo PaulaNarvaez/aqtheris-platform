@@ -832,5 +832,53 @@ export const publicMessages={
     "For account access, technical issues or data recovery requests, contact Aqtheris support.",
     "Neem voor accounttoegang, technische problemen of gegevensherstel contact op met Aqtheris-ondersteuning.",
     "Für Kontozugang, technische Probleme oder Datenwiederherstellung kontaktiere den Aqtheris-Support."
+  ],
+  "Votre compte a été créé. Connectez-vous, puis contactez l’administrateur pour faire approuver votre compte et attribuer votre rôle.": [
+    "Tu cuenta fue creada. Inicia sesión y contacta a la administradora para que apruebe la cuenta y asigne tu rol.",
+    "Your account was created. Sign in, then contact the administrator to approve your account and assign your role.",
+    "Je account is aangemaakt. Log in en neem contact op met de beheerder voor goedkeuring en je rol.",
+    "Dein Konto wurde erstellt. Melde dich an und bitte die Administration um Freigabe und Rollenzuweisung."
+  ],
+  "Bienvenue dans Aqtheris": [
+    "TE DAMOS LA BIENVENIDA A AQTHERIS",
+    "WELCOME TO AQTHERIS",
+    "WELKOM BIJ AQTHERIS",
+    "WILLKOMMEN BEI AQTHERIS"
+  ],
+  "Votre compte est créé.": [
+    "Tu cuenta está creada.",
+    "Your account is created.",
+    "Je account is aangemaakt.",
+    "Dein Konto ist erstellt."
+  ],
+  "Vous êtes connecté. Contactez l’administrateur pour faire approuver votre compte et recevoir le rôle et les sites adaptés à votre travail.": [
+    "Ya iniciaste sesión. Contacta a la administradora para que apruebe tu cuenta y te asigne el rol y los sitios correspondientes a tu trabajo.",
+    "You are signed in. Contact the administrator to approve your account and assign the role and sites appropriate for your work.",
+    "Je bent ingelogd. Neem contact op met de beheerder voor goedkeuring en toewijzing van je rol en locaties.",
+    "Du bist angemeldet. Bitte die Administration um Freigabe sowie die Zuweisung deiner Rolle und Standorte."
+  ],
+  "Les modules professionnels seront disponibles après cette attribution. Vous n’avez pas besoin de créer un autre compte.": [
+    "Los módulos de trabajo estarán disponibles después de esa asignación. No necesitas crear otra cuenta.",
+    "Work modules will be available after that assignment. You do not need to create another account.",
+    "De werkmodules zijn beschikbaar na toewijzing. Je hoeft geen nieuw account aan te maken.",
+    "Die Arbeitsmodule sind nach der Zuweisung verfügbar. Du musst kein weiteres Konto erstellen."
+  ],
+  "Vérifier mon accès": [
+    "Verificar mi acceso",
+    "Check my access",
+    "Mijn toegang controleren",
+    "Meinen Zugang prüfen"
+  ],
+  "Votre compte attend encore l’approbation. Demandez à votre administrateur d’ouvrir Équipe.": [
+    "Tu cuenta sigue pendiente. Pide a tu administradora que la apruebe desde Equipo y asigne el rol correspondiente.",
+    "Your account is still pending. Ask your administrator to approve it from Team and assign the appropriate role.",
+    "Je account wacht nog op goedkeuring. Vraag de beheerder je account goed te keuren via Team en je rol toe te wijzen.",
+    "Dein Konto wartet noch auf Freigabe. Bitte die Administration um Freigabe unter Team und die passende Rolle."
+  ],
+  "Votre compte est approuvé. Contactez votre administrateur pour recevoir le rôle et les accès adaptés à votre travail.": [
+    "Tu cuenta está aprobada. Contacta a tu administradora para que te asigne el rol y los accesos correspondientes a tu trabajo.",
+    "Your account is approved. Contact your administrator to assign the role and access appropriate for your work.",
+    "Je account is goedgekeurd. Vraag de beheerder om de juiste rol en toegang voor je werk.",
+    "Dein Konto ist freigegeben. Bitte die Administration um die passende Rolle und Zugriffsrechte."
   ]
 };
