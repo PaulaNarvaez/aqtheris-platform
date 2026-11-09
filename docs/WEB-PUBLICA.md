@@ -67,3 +67,11 @@ Al cambiar la contraseña desde Mi perfil, se invalidan todas las sesiones del u
 La recuperación con código también redirige automáticamente al login tras guardar la nueva clave. Se comprobó en Chromium el cambio de perfil, la recuperación, la caducidad de la sesión anterior y el ingreso con ambas contraseñas nuevas en datos temporales. La prueba de API incluye dos sesiones anteriores y verifica que ninguna siga accediendo al perfil.
 
 Los iconos del menú se redibujaron como símbolos SVG con trazos uniformes, sin las bases decorativas. Se mantienen las etiquetas y el desplazamiento del menú. No se agregaron dependencias ni fuentes de iconos remotas.
+
+## Dashboard con gráficos
+
+Se añadieron un gráfico de visitas programadas/realizadas por mes, con selector de 3/6/12 meses, y un gráfico de tareas por estado actual. Los datos proceden de los registros autorizados cargados por la API. No se simulan cifras cuando las listas están vacías. Las cancelaciones y los registros archivados se excluyen según las reglas de cada gráfico; las visitas usan su fecha y estado actuales, no una reconstrucción histórica de cambios de estado.
+
+Hay detalle al enfocar/pasar el cursor y una tabla de datos alternativa para las visitas. Los gráficos solo aparecen cuando el usuario tiene acceso al módulo correspondiente. La tarjeta del logo incorpora movimiento suave e interacción con el puntero. La franja acuática animada del footer vuelve únicamente al dashboard, con el crédito «Creado por paujnarvaez con ♥» y sin otras leyendas. Se respeta el movimiento reducido del sistema.
+
+La base de datos remota acordada es Supabase, todavía pendiente de proyecto/configuración e implementación de integración. Ver [MIGRACION-SUPABASE.md](MIGRACION-SUPABASE.md).

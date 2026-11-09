@@ -886,5 +886,137 @@ export const publicMessages={
     "Password updated. Sign in again with your new password.",
     "Wachtwoord bijgewerkt. Log opnieuw in met je nieuwe wachtwoord.",
     "Passwort aktualisiert. Melde dich erneut mit deinem neuen Passwort an."
+  ],
+  "Programmées": [
+    "Programadas",
+    "Scheduled",
+    "Gepland",
+    "Geplant"
+  ],
+  "Réalisées": [
+    "Realizadas",
+    "Completed",
+    "Uitgevoerd",
+    "Durchgeführt"
+  ],
+  "Visites par mois : programmées et réalisées": [
+    "Visitas por mes: programadas y realizadas",
+    "Monthly visits: scheduled and completed",
+    "Bezoeken per maand: gepland en uitgevoerd",
+    "Besuche pro Monat: geplant und durchgeführt"
+  ],
+  "Survolez une barre ou utilisez le clavier pour voir le détail.": [
+    "Pasa el cursor sobre una barra o usa el teclado para ver el detalle.",
+    "Hover over a bar or use the keyboard for details.",
+    "Beweeg over een balk of gebruik het toetsenbord voor details.",
+    "Bewege den Zeiger über einen Balken oder nutze die Tastatur für Details."
+  ],
+  "Aucune visite programmée ou réalisée sur cette période.": [
+    "No hay visitas programadas o realizadas en este período.",
+    "No scheduled or completed visits in this period.",
+    "Geen geplande of uitgevoerde bezoeken in deze periode.",
+    "Keine geplanten oder durchgeführten Besuche in diesem Zeitraum."
+  ],
+  "Voir les données": [
+    "Ver datos",
+    "View data",
+    "Gegevens bekijken",
+    "Daten ansehen"
+  ],
+  "Mois": [
+    "Mes",
+    "Month",
+    "Maand",
+    "Monat"
+  ],
+  "Répartition des actions par état": [
+    "Distribución de tareas por estado",
+    "Tasks by status",
+    "Taken per status",
+    "Aufgaben nach Status"
+  ],
+  "actions": [
+    "tareas",
+    "tasks",
+    "taken",
+    "Aufgaben"
+  ],
+  "État actuel de toutes les actions enregistrées dans vos sites accessibles.": [
+    "Estado actual de todas las tareas registradas en tus sitios autorizados.",
+    "Current status of all tasks recorded in your authorized sites.",
+    "Huidige status van taken op je toegankelijke locaties.",
+    "Aktueller Status aller Aufgaben deiner zugänglichen Standorte."
+  ],
+  "Le graphique se remplira lorsque des actions seront enregistrées.": [
+    "El gráfico se completará cuando registres tareas.",
+    "The chart will fill as tasks are recorded.",
+    "De grafiek vult zich zodra taken worden geregistreerd.",
+    "Das Diagramm füllt sich, sobald Aufgaben erfasst werden."
+  ],
+  "Votre activité en perspective": [
+    "Tu actividad en perspectiva",
+    "Your activity at a glance",
+    "Je activiteit in beeld",
+    "Deine Aktivitäten im Überblick"
+  ],
+  "ACTIVITÉ": [
+    "ACTIVIDAD",
+    "ACTIVITY",
+    "ACTIVITEIT",
+    "AKTIVITÄT"
+  ],
+  "Le rythme des visites": [
+    "El ritmo de las visitas",
+    "The rhythm of visits",
+    "Het ritme van bezoeken",
+    "Der Rhythmus der Besuche"
+  ],
+  "Période": [
+    "Período",
+    "Period",
+    "Periode",
+    "Zeitraum"
+  ],
+  "mois": [
+    "meses",
+    "months",
+    "maanden",
+    "Monate"
+  ],
+  "Date de visite, état actuel. Les visites annulées sont exclues.": [
+    "Fecha de visita y estado actual. Se excluyen las visitas canceladas.",
+    "Visit date and current status. Cancelled visits are excluded.",
+    "Bezoekdatum en huidige status. Geannuleerde bezoeken tellen niet mee.",
+    "Besuchsdatum und aktueller Status. Abgesagte Besuche werden ausgeschlossen."
+  ],
+  "SUIVI": [
+    "SEGUIMIENTO",
+    "FOLLOW-UP",
+    "OPVOLGING",
+    "NACHVERFOLGUNG"
+  ],
+  "Chaque action compte": [
+    "Cada tarea cuenta",
+    "Every task counts",
+    "Elke taak telt",
+    "Jede Aufgabe zählt"
+  ],
+  "À faire": [
+    "Pendiente",
+    "To do",
+    "Te doen",
+    "Offen"
+  ],
+  "En cours": [
+    "En curso",
+    "In progress",
+    "Bezig",
+    "In Bearbeitung"
+  ],
+  "Terminée": [
+    "Terminada",
+    "Completed",
+    "Afgerond",
+    "Abgeschlossen"
   ]
 };
